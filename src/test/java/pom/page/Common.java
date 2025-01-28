@@ -1,5 +1,10 @@
 package pom.page;
 
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v132.network.Network;
 import pom.util.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,10 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.CountDownLatch;
 
 public class Common {
 
@@ -234,5 +237,12 @@ public class Common {
             elementsSelectedList.add(element.isSelected());
         }
         return elementsSelectedList;
+    }
+
+    public static int getResponseStatus(String userName, String password, String url) {
+        Response response = RestAssured.given()
+                .auth().basic(userName, password)
+                .get(url);
+        return response.getStatusCode();
     }
 }

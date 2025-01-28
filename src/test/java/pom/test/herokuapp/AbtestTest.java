@@ -14,7 +14,7 @@ public class AbtestTest extends TestBase {
     }
 
     @Test
-    public void test() {
+    public void testPositiveAbTest_expectedWelcomeMessages() {
         String expectedHeading = "A/B Test";
         String expectedParagraph = "Also known as split testing.";
         String actualResultHeading = AbtestPage.getHeadingText();
