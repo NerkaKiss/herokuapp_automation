@@ -24,5 +24,10 @@ public class Locator {
             public static final By divSecondImage = By.xpath("//div[@class='example']//img[2]");
             public static final By divThirdImage = By.xpath("//div[@class='example']//img[3]");
         }
+
+        public static class CheckBoxes {
+            public static final By inputCheckBoxFirst = By.xpath("//input[1]");
+            public static final By inputCheckBoxSecond = By.xpath("//input[2]");
+        }
     }
 }
