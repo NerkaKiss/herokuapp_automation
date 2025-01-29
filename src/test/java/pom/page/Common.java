@@ -245,4 +245,12 @@ public class Common {
                 .get(url);
         return response.getStatusCode();
     }
+
+    public static int countElements(By element) {
+        return getElements(element).size();
+    }
+
+    public static boolean isElementDisplayedBySize(By locator) {
+        return !getElements(locator).isEmpty();
+    }
 }
