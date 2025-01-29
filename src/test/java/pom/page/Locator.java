@@ -18,5 +18,11 @@ public class Locator {
             public static final By buttonDeleteElement = By.xpath("//button[@onclick='deleteElement()']");
             public static final By buttonDeleteElements = By.xpath("//div[@id='elements']//button");
         }
+
+        public static class BrokenImages {
+            public static final By divFirstImage = By.xpath("//div[@class='example']//img[1]");
+            public static final By divSecondImage = By.xpath("//div[@class='example']//img[2]");
+            public static final By divThirdImage = By.xpath("//div[@class='example']//img[3]");
+        }
     }
 }

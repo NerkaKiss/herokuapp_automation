@@ -1,10 +1,9 @@
 package pom.page;
 
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v132.network.Network;
+
+import static io.restassured.RestAssured.*;
+
 import pom.util.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.CountDownLatch;
+
 
 public class Common {
 
@@ -240,7 +239,7 @@ public class Common {
     }
 
     public static int getResponseStatus(String userName, String password, String url) {
-        Response response = RestAssured.given()
+        Response response = given()
                 .auth().basic(userName, password)
                 .get(url);
         return response.getStatusCode();
@@ -252,5 +251,18 @@ public class Common {
 
     public static boolean isElementDisplayedBySize(By locator) {
         return !getElements(locator).isEmpty();
+    }
+
+    public static boolean isImageExists(String url) {
+        Response response = given()
+                .when()
+                .head(url);
+        return response.statusCode() == 200 && response.getHeader("Content-Type") != null
+                && response.getHeader("Content-Type").startsWith("image/");
+    }
+
+    public static String getElementValueByTag(By locator, String tag) {
+        String value = getElement(locator).getDomAttribute(tag);
+        return value != null ? value : getElement(locator).getAttribute(tag);
     }
 }
