@@ -48,5 +48,12 @@ public class Locator {
         public static class DropDownList {
             public static final By selectDropdown = By.xpath("//select[@id='dropdown']");
         }
+
+        public static class DynamicContent {
+            public static final By divFirstText = By.xpath("((//div[@id='content'])[2]/div//div[2])[1]");
+            public static final By divSecondText = By.xpath("((//div[@id='content'])[2]/div//div[2])[2]");
+            public static final By divThirdText = By.xpath("((//div[@id='content'])[2]/div//div[2])[3]");
+            public static final By divClickHere = By.xpath("//div/p[2]/a");
+        }
     }
 }
