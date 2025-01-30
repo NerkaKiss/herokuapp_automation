@@ -37,5 +37,12 @@ public class Locator {
         public static class DigestAuth {
             public static final By paragraph = By.xpath("//p");
         }
+
+        public static class DragAndDrop {
+            public static final By divColumnA = By.xpath("//div[@id='column-a']");
+            public static final By divHeaderColumnA = By.xpath("//div[@id='column-a']/header");
+            public static final By divColumnB = By.xpath("//div[@id='column-b']");
+            public static final By divHeaderColumnB = By.xpath("//div[@id='column-b']/header");
+        }
     }
 }

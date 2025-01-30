@@ -140,7 +140,8 @@ public class Common {
         getWebDriverWait(seconds).until(driver -> {
             // Tikrina puslapio būklę ir aktyvias užklausas
             String readyState = (String) getJsExecutor().executeScript("return document.readyState");
-            Boolean ajaxComplete = (Boolean) getJsExecutor().executeScript("return (typeof jQuery !== 'undefined' ? jQuery.active == 0 : true) && " + "!(window.fetch && window.__pendingFetchCount > 0);");
+            Boolean ajaxComplete = (Boolean) getJsExecutor()
+                    .executeScript("return (typeof jQuery !== 'undefined' ? jQuery.active == 0 : true) && " + "!(window.fetch && window.__pendingFetchCount > 0);");
             return "complete".equals(readyState) && ajaxComplete;
         });
     }
@@ -237,7 +238,9 @@ public class Common {
 
     public static boolean isImageExists(String url) {
         Response response = given().when().head(url);
-        return response.statusCode() == 200 && response.getHeader("Content-Type") != null && response.getHeader("Content-Type").startsWith("image/");
+        return response.statusCode() == 200 &&
+                response.getHeader("Content-Type") != null &&
+                response.getHeader("Content-Type").startsWith("image/");
     }
 
     public static String getElementValueByTag(By locator, String tag) {
@@ -256,5 +259,13 @@ public class Common {
 
     public static String getTextFromJavaScriptAlert() {
         return Driver.getDriver().switchTo().alert().getText();
+    }
+
+    public static void dragAndDropWithActionsFromElementToElement(By locator, By locatorTarget) {
+        getActions().dragAndDrop(getElement(locator), getElement(locatorTarget)).build().perform();
+    }
+
+    public static void dragAndDropWithActionsFromElementToXY(By locator, int x, int y) {
+        getActions().dragAndDropBy(getElement(locator), x, y).build().perform();
     }
 }
