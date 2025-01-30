@@ -44,5 +44,9 @@ public class Locator {
             public static final By divColumnB = By.xpath("//div[@id='column-b']");
             public static final By divHeaderColumnB = By.xpath("//div[@id='column-b']/header");
         }
+
+        public static class DropDownList {
+            public static final By selectDropdown = By.xpath("//select[@id='dropdown']");
+        }
     }
 }

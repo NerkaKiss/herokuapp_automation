@@ -170,6 +170,10 @@ public class Common {
         return getSelectElement(locator).getFirstSelectedOption().getAttribute("value");
     }
 
+    public static String readSelectedOptionText(By locator) {
+        return getSelectElement(locator).getFirstSelectedOption().getText();
+    }
+
     public static void selectMultipleValues(By locator, List<String> values) {
         Select select = getSelectElement(locator);
         for (String value : values) {
