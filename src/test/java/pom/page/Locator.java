@@ -33,5 +33,9 @@ public class Locator {
         public static class ContextMenu {
             public static final By divBox = By.xpath("//div[@id='hot-spot']");
         }
+
+        public static class DigestAuth {
+            public static final By paragraph = By.xpath("//p");
+        }
     }
 }
