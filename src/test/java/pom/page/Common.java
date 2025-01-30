@@ -4,11 +4,8 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
+import org.openqa.selenium.*;
 import pom.util.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -89,12 +86,7 @@ public class Common {
     }
 
     public static Map<String, String> getElementAllAttributes(By locator) {
-        String script =
-                "var items = {}; " +
-                        "for (index = 0; index < arguments[0].attributes.length; ++index) { " +
-                        "   items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value; " +
-                        "}; " +
-                        "return items;";
+        String script = "var items = {}; " + "for (index = 0; index < arguments[0].attributes.length; ++index) { " + "   items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value; " + "}; " + "return items;";
         return (Map<String, String>) getJsExecutor().executeScript(script, getElement(locator));
     }
 
@@ -132,10 +124,8 @@ public class Common {
         getWebDriverWait(seconds).until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public static void waitElementAttributeContains(
-            By locator, String attributeName, String attributeValueContains, int seconds) {
-        getWebDriverWait(seconds)
-                .until(ExpectedConditions.attributeContains(locator, attributeName, attributeValueContains));
+    public static void waitElementAttributeContains(By locator, String attributeName, String attributeValueContains, int seconds) {
+        getWebDriverWait(seconds).until(ExpectedConditions.attributeContains(locator, attributeName, attributeValueContains));
     }
 
     public static void waitElementIsVisible(By locator, int seconds) {
@@ -150,10 +140,7 @@ public class Common {
         getWebDriverWait(seconds).until(driver -> {
             // Tikrina puslapio būklę ir aktyvias užklausas
             String readyState = (String) getJsExecutor().executeScript("return document.readyState");
-            Boolean ajaxComplete = (Boolean) getJsExecutor().executeScript(
-                    "return (typeof jQuery !== 'undefined' ? jQuery.active == 0 : true) && " +
-                            "!(window.fetch && window.__pendingFetchCount > 0);"
-            );
+            Boolean ajaxComplete = (Boolean) getJsExecutor().executeScript("return (typeof jQuery !== 'undefined' ? jQuery.active == 0 : true) && " + "!(window.fetch && window.__pendingFetchCount > 0);");
             return "complete".equals(readyState) && ajaxComplete;
         });
     }
@@ -208,10 +195,7 @@ public class Common {
     }
 
     public static void scrollDownWithActions() {
-        getActions()
-                .sendKeys(Keys.PAGE_DOWN)
-                .build()
-                .perform();
+        getActions().sendKeys(Keys.PAGE_DOWN).build().perform();
     }
 
     private static Actions getActions() {
@@ -239,9 +223,7 @@ public class Common {
     }
 
     public static int getResponseStatus(String userName, String password, String url) {
-        Response response = given()
-                .auth().basic(userName, password)
-                .get(url);
+        Response response = given().auth().basic(userName, password).get(url);
         return response.getStatusCode();
     }
 
@@ -254,15 +236,25 @@ public class Common {
     }
 
     public static boolean isImageExists(String url) {
-        Response response = given()
-                .when()
-                .head(url);
-        return response.statusCode() == 200 && response.getHeader("Content-Type") != null
-                && response.getHeader("Content-Type").startsWith("image/");
+        Response response = given().when().head(url);
+        return response.statusCode() == 200 && response.getHeader("Content-Type") != null && response.getHeader("Content-Type").startsWith("image/");
     }
 
     public static String getElementValueByTag(By locator, String tag) {
         String value = getElement(locator).getDomAttribute(tag);
         return value != null ? value : getElement(locator).getAttribute(tag);
+    }
+
+    public static boolean isJavascriptAlertPresent() {
+        try {
+            Driver.getDriver().switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    public static String getTextFromJavaScriptAlert() {
+        return Driver.getDriver().switchTo().alert().getText();
     }
 }

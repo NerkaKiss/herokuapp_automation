@@ -29,5 +29,9 @@ public class Locator {
             public static final By inputCheckBoxFirst = By.xpath("//input[1]");
             public static final By inputCheckBoxSecond = By.xpath("//input[2]");
         }
+
+        public static class ContextMenu {
+            public static final By divBox = By.xpath("//div[@id='hot-spot']");
+        }
     }
 }
