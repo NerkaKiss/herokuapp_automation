@@ -1,7 +1,6 @@
 package pom.page.herokuapp;
 
 import pom.page.Common;
-import pom.page.Locator;
 
 import static pom.page.Locator.Herokuapp.EntryAd.*;
 
