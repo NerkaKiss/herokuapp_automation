@@ -55,5 +55,15 @@ public class Locator {
             public static final By divThirdText = By.xpath("((//div[@id='content'])[2]/div//div[2])[3]");
             public static final By divClickHere = By.xpath("//div/p[2]/a");
         }
+
+        public static class DynamicControls {
+            public static final By buttonRemove = By.xpath("//button[normalize-space()='Remove']");
+            public static final By buttonAdd = By.xpath("//button[normalize-space()='Add']");
+            public static final By paragraphMessage = By.xpath("//p[@id='message']");
+            public static final By buttonEnable = By.xpath("//button[normalize-space()='Enable']");
+            public static final By buttonDisable = By.xpath("//button[normalize-space()='Disable']");
+            public static final By inputEnableDisable = By.xpath("//input[@type='text']");
+            public static final By divCheckbox = By.xpath("//input[@id='checkbox']");
+        }
     }
 }

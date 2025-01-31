@@ -14,7 +14,7 @@ public class BrokenImagesTest extends TestBase {
     }
 
     @Test
-    public void testNegative_BrokenImages_expectedTrue() {
+    public void testNegative_brokenImages_expectedTrue() {
         boolean expectedFirstImageBroken = true;
         boolean expectedSecondImageBroken = true;
         boolean actualFirstResult = BrokenImagesPage.isFirstImageBroken();
@@ -25,7 +25,7 @@ public class BrokenImagesTest extends TestBase {
     }
 
     @Test
-    public void testPositive_ValidImage_expectedTrue() {
+    public void testPositive_validImage_expectedTrue() {
         boolean expectedThirdImageValid = true;
         boolean actualThirdResult = BrokenImagesPage.isThirdImageValid();
 

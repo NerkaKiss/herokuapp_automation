@@ -14,7 +14,7 @@ public class CheckBoxesTest extends TestBase {
     }
 
     @Test
-    public void testPositive_CheckBoxesAllChecked_expectedTrue() {
+    public void testPositive_checkBoxesAllChecked_expectedTrue() {
         boolean expectedFirstResult = true;
         boolean expectedSecondResult = true;
         CheckBoxesPage.checkAllCheckBoxes();
@@ -25,7 +25,7 @@ public class CheckBoxesTest extends TestBase {
     }
 
     @Test
-    public void testPositive_CheckBoxesAllUnChecked_expectedTrue() {
+    public void testPositive_checkBoxesAllUnChecked_expectedTrue() {
         boolean expectedFirstResult = true;
         boolean expectedSecondResult = true;
         CheckBoxesPage.uncheckAllCheckBoxes();

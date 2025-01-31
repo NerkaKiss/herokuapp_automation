@@ -14,7 +14,7 @@ public class AddRemoveElementsTest extends TestBase {
     }
 
     @Test
-    public void testPositiveAddElement_expectedDeleteButtonVisible() {
+    public void testPositive_AddElement_expectedDeleteButtonVisible() {
         boolean expectedResult = true;
         AddRemoveElementsPage.clickOnButtonAddElement();
         boolean actualResult = AddRemoveElementsPage.isDeleteButtonVisible();
@@ -23,7 +23,7 @@ public class AddRemoveElementsTest extends TestBase {
     }
 
     @Test
-    public void testPositiveAddThreeElements_expectedThreeDeleteButtonsVisible() {
+    public void testPositive_AddThreeElements_expectedThreeDeleteButtonsVisible() {
         int expectedResult = 3;
         AddRemoveElementsPage.clickOnButtonAddElement();
         AddRemoveElementsPage.clickOnButtonAddElement();
@@ -34,7 +34,7 @@ public class AddRemoveElementsTest extends TestBase {
     }
 
     @Test
-    public void testPositiveDeleteElement_expectedDeleteButtonNotVisible() {
+    public void testPositive_DeleteElement_expectedDeleteButtonNotVisible() {
         boolean expectedResult = false;
         AddRemoveElementsPage.clickOnButtonAddElement();
         AddRemoveElementsPage.clickOnButtonDelete();
@@ -44,7 +44,7 @@ public class AddRemoveElementsTest extends TestBase {
     }
 
     @Test
-    public void testPositiveDeleteThreeElements_expectedDeleteButtonNotVisible() {
+    public void testPositive_DeleteThreeElements_expectedDeleteButtonNotVisible() {
         boolean expectedResult = false;
         AddRemoveElementsPage.clickOnButtonAddElement();
         AddRemoveElementsPage.clickOnButtonAddElement();

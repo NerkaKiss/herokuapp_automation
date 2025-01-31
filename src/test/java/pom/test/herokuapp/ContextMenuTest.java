@@ -14,7 +14,7 @@ public class ContextMenuTest extends TestBase {
     }
 
     @Test
-    public void testPositive_AlertTriggered_expectedTextTrue() {
+    public void testPositive_alertTriggered_expectedTextTrue() {
         String expectedResult = "You selected a context menu";
         boolean expectedAlertTriggered = true;
         ContextMenuPage.rightClickOnBox();

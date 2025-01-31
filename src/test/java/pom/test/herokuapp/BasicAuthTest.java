@@ -23,7 +23,7 @@ public class BasicAuthTest {
     }
 
     @Test
-    public void testNegativeBasicAuthTest_EmptyFields_expectedAuthenticationDialogVisible() {
+    public void testNegativeBasicAuthTest_emptyFields_expectedAuthenticationDialogVisible() {
         String userName = "";
         String password = "";
         boolean expectedResult = true;
@@ -32,7 +32,7 @@ public class BasicAuthTest {
     }
 
     @Test
-    public void testNegativeBasicAuthTest_InvalidUserName_expectedAuthenticationDialogVisible() {
+    public void testNegativeBasicAuthTest_invalidUserName_expectedAuthenticationDialogVisible() {
         String userName = "adminas";
         String password = "admin";
         boolean expectedResult = true;
@@ -41,7 +41,7 @@ public class BasicAuthTest {
     }
 
     @Test
-    public void testNegativeBasicAuthTest_InvalidPassword_expectedAuthenticationDialogVisible() {
+    public void testNegativeBasicAuthTest_invalidPassword_expectedAuthenticationDialogVisible() {
         String userName = "admin";
         String password = "adminas";
         boolean expectedResult = true;

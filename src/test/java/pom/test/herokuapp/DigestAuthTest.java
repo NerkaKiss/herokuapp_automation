@@ -23,7 +23,7 @@ public class DigestAuthTest {
     }
 
     @Test
-    public void testNegativeDigestAuthTest_EmptyFields_expectedAuthenticationDialogVisible() {
+    public void testNegativeDigestAuthTest_emptyFields_expectedAuthenticationDialogVisible() {
         String userName = "";
         String password = "";
         boolean expectedResult = true;
@@ -32,7 +32,7 @@ public class DigestAuthTest {
     }
 
     @Test
-    public void testNegativeDigestAuthTest_InvalidUserName_expectedAuthenticationDialogVisible() {
+    public void testNegativeDigestAuthTest_invalidUserName_expectedAuthenticationDialogVisible() {
         String userName = "adminas";
         String password = "admin";
         boolean expectedResult = true;
@@ -41,7 +41,7 @@ public class DigestAuthTest {
     }
 
     @Test
-    public void testNegativeDigestAuthTest_InvalidPassword_expectedAuthenticationDialogVisible() {
+    public void testNegativeDigestAuthTest_invalidPassword_expectedAuthenticationDialogVisible() {
         String userName = "admin";
         String password = "adminas";
         boolean expectedResult = true;

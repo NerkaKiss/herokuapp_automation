@@ -14,7 +14,7 @@ public class DynamicContentTest extends TestBase {
     }
 
     @Test
-    public void testPositive_DynamicContent_NotEqualsAfterClick() {
+    public void testPositive_dynamicContent_NotEqualsAfterClick() {
         String firstLoadedHeaderText = DynamicContentPage.getTextFromFirstHeader();
         String secondLoadedHeaderText = DynamicContentPage.getTextFromSecondHeader();
         String thirdLoadedHeaderText = DynamicContentPage.getTextFromThirdHeader();
