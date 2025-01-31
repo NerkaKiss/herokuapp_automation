@@ -80,5 +80,10 @@ public class Locator {
             public static final By divButtonStart = By.xpath("//div[@id='start']/button");
             public static final By divMessage = By.xpath("//div[@id='finish']/h4");
         }
+
+        public static class EntryAd {
+            public static final By divClose = By.xpath("//div[@class='modal-footer']/p");
+            public static final By divAdWindow = By.xpath("//div[@id='modal']");
+        }
     }
 }
