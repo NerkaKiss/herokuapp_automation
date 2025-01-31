@@ -65,5 +65,20 @@ public class Locator {
             public static final By inputEnableDisable = By.xpath("//input[@type='text']");
             public static final By divCheckbox = By.xpath("//input[@id='checkbox']");
         }
+
+        public static class DynamicLoading {
+            public static final By divExample1 = By.xpath("//div[@class='example']//a[1]");
+            public static final By divExample2 = By.xpath("//div[@class='example']//a[2]");
+        }
+
+        public static class DynamicLoadingExample1 {
+            public static final By divButtonStart = By.xpath("//div[@id='start']/button");
+            public static final By divMessage = By.xpath("//div[@id='finish']/h4");
+        }
+
+        public static class DynamicLoadingExample2 {
+            public static final By divButtonStart = By.xpath("//div[@id='start']/button");
+            public static final By divMessage = By.xpath("//div[@id='finish']/h4");
+        }
     }
 }
