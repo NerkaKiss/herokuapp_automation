@@ -97,5 +97,10 @@ public class Locator {
             public static final By divMessage = By.xpath("//div[@id='flash']");
             public static final By divButtonLogout = By.xpath("//div[@class='example']/a");
         }
+
+        public static class Iframe {
+            public static final By iframe = By.xpath("//iframe[@id='mce_0_ifr']");
+            public static final By paragraphMessage = By.xpath("//p");
+        }
     }
 }
