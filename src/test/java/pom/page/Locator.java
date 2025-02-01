@@ -102,5 +102,10 @@ public class Locator {
             public static final By iframe = By.xpath("//iframe[@id='mce_0_ifr']");
             public static final By paragraphMessage = By.xpath("//p");
         }
+
+        public static class HorizontalSlider {
+            public static final By inputSlider = By.xpath("//input[@type='range']");
+            public static final By spanValue = By.xpath("//span[@id='range']");
+        }
     }
 }

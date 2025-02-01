@@ -276,4 +276,12 @@ public class Common {
     public static void switchToFrame(By locator) {
         Driver.getDriver().switchTo().frame(getElement(locator));
     }
+
+    public static void moveSliderWithJSExecutor(By locator, double number) {
+        getJsExecutor().executeScript(
+                "arguments[0].value = arguments[1]; " +
+                        "arguments[0].dispatchEvent(new Event('input')); " +
+                        "arguments[0].dispatchEvent(new Event('change'));",
+                getElement(locator), String.valueOf(number));
+    }
 }
