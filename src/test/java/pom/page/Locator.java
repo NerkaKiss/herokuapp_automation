@@ -85,5 +85,17 @@ public class Locator {
             public static final By divClose = By.xpath("//div[@class='modal-footer']/p");
             public static final By divAdWindow = By.xpath("//div[@id='modal']");
         }
+
+        public static class Login {
+            public static final By inputUsername = By.xpath("//input[@id='username']");
+            public static final By inputPassword = By.xpath("//input[@id='password']");
+            public static final By buttonLogin = By.xpath("//button[@type='submit']");
+            public static final By divMessage = By.xpath("//div[@id='flash']");
+        }
+
+        public static class Secure {
+            public static final By divMessage = By.xpath("//div[@id='flash']");
+            public static final By divButtonLogout = By.xpath("//div[@class='example']/a");
+        }
     }
 }
