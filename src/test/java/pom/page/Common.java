@@ -272,4 +272,8 @@ public class Common {
     public static void dragAndDropWithActionsFromElementToXY(By locator, int x, int y) {
         getActions().dragAndDropBy(getElement(locator), x, y).build().perform();
     }
+
+    public static void switchToFrame(By locator) {
+        Driver.getDriver().switchTo().frame(getElement(locator));
+    }
 }
