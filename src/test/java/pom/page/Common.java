@@ -5,6 +5,9 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import pom.util.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -307,5 +310,16 @@ public class Common {
 
     public static void sendKeysToJavaScriptAlert(String message) {
         Driver.getDriver().switchTo().alert().sendKeys(message);
+    }
+
+    public static boolean checkForJavaScriptErrors() {
+        LogEntries logEntries = Driver.getDriver().manage().logs().get(LogType.BROWSER);
+
+        for (LogEntry entry : logEntries) {
+            if (entry.getMessage().contains("Error")) {
+                return true;
+            }
+        }
+        return false;
     }
 }
