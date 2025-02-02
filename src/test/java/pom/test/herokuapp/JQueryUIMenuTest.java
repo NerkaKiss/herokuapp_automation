@@ -14,7 +14,7 @@ public class JQueryUIMenuTest extends TestBase {
     }
 
     @Test
-    public void test() {
+    public void testPositive_JQueryMenuUi_expectedUrl() {
         String expectedUrl = "https://the-internet.herokuapp.com/jqueryui";
         JQueryUIMenuPage.navigateFromMenuToDownloadsPDF();
         JQueryUIMenuPage.clickOnButtonBackToJQueryUi();

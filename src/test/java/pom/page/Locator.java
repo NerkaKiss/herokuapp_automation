@@ -122,5 +122,9 @@ public class Locator {
             public static final By ulDownloads = By.xpath("//ul[@id='menu']/li[2]/ul/li[1]");
             public static final By ulPDF = By.xpath("//ul[@id='menu']/li[2]/ul/li[1]/ul/li[1]");
         }
+
+        public static class JavaScriptAlerts {
+            public static final By paragraphMessage = By.xpath("//p[@id='result']");
+        }
     }
 }

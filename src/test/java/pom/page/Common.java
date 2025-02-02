@@ -292,4 +292,20 @@ public class Common {
     public static void sendUpDownTimesWithActions(Keys keys, int number) {
         getActions().sendKeys(keys.toString().repeat(Math.abs(number))).build().perform();
     }
+
+    public static void alertIsPresent(int seconds) {
+        getWebDriverWait(seconds).until(ExpectedConditions.alertIsPresent());
+    }
+
+    public static void clickJavaScriptAlertOk() {
+        Driver.getDriver().switchTo().alert().accept();
+    }
+
+    public static void clickJavaScriptAlertCancel() {
+        Driver.getDriver().switchTo().alert().dismiss();
+    }
+
+    public static void sendKeysToJavaScriptAlert(String message) {
+        Driver.getDriver().switchTo().alert().sendKeys(message);
+    }
 }
