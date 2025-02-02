@@ -115,5 +115,12 @@ public class Locator {
         public static class Inputs {
             public static final By inputNumber = By.xpath("//input[@type='number']");
         }
+
+        public static class JQueryUIMenu {
+            public static final By ulBack = By.xpath("//ul[@id='menu']/li[2]/ul/li[2]");
+            public static final By ulEnabled = By.xpath("//ul[@id='menu']/li[2]");
+            public static final By ulDownloads = By.xpath("//ul[@id='menu']/li[2]/ul/li[1]");
+            public static final By ulPDF = By.xpath("//ul[@id='menu']/li[2]/ul/li[1]/ul/li[1]");
+        }
     }
 }
