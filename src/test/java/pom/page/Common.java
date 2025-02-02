@@ -292,8 +292,8 @@ public class Common {
         getWebDriverWait(seconds).until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
     }
 
-    public static void sendUpDownTimesWithActions(Keys keys, int number) {
-        getActions().sendKeys(keys.toString().repeat(Math.abs(number))).build().perform();
+    public static void sendInputTimesWithActions(Object input, int number) {
+        getActions().sendKeys(input.toString().repeat(Math.abs(number))).build().perform();
     }
 
     public static void alertIsPresent(int seconds) {

@@ -126,5 +126,9 @@ public class Locator {
         public static class JavaScriptAlerts {
             public static final By paragraphMessage = By.xpath("//p[@id='result']");
         }
+
+        public static class KeyPresses {
+            public static final By paragraphMessage = By.xpath("//p[@id='result']");
+        }
     }
 }

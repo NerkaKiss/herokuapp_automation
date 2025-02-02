@@ -15,9 +15,9 @@ public class InputsPage {
     public static void changeNumberTo(int number) {
         Common.clickOnElementWithActions(inputNumber);
         if (number > 0) {
-            Common.sendUpDownTimesWithActions(Keys.ARROW_UP, number);
+            Common.sendInputTimesWithActions(Keys.ARROW_UP, number);
         } else {
-            Common.sendUpDownTimesWithActions(Keys.ARROW_DOWN, number);
+            Common.sendInputTimesWithActions(Keys.ARROW_DOWN, number);
         }
     }
 
