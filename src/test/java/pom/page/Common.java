@@ -284,4 +284,8 @@ public class Common {
                         "arguments[0].dispatchEvent(new Event('change'));",
                 getElement(locator), String.valueOf(number));
     }
+
+    public static void waitNumberOfElementsToBeMoreThan(By locator, int number, int seconds) {
+        getWebDriverWait(seconds).until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
+    }
 }

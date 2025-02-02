@@ -107,5 +107,9 @@ public class Locator {
             public static final By inputSlider = By.xpath("//input[@type='range']");
             public static final By spanValue = By.xpath("//span[@id='range']");
         }
+
+        public static class InfinitiveScroll {
+            public static final By divScrollAll = By.xpath("//div[@class='jscroll-added']");
+        }
     }
 }
