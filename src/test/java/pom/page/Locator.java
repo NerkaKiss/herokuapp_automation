@@ -111,5 +111,9 @@ public class Locator {
         public static class InfinitiveScroll {
             public static final By divScrollAll = By.xpath("//div[@class='jscroll-added']");
         }
+
+        public static class Inputs {
+            public static final By inputNumber = By.xpath("//input[@type='number']");
+        }
     }
 }

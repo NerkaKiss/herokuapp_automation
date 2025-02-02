@@ -288,4 +288,8 @@ public class Common {
     public static void waitNumberOfElementsToBeMoreThan(By locator, int number, int seconds) {
         getWebDriverWait(seconds).until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
     }
+
+    public static void sendUpDownTimesWithActions(Keys keys, int number) {
+        getActions().sendKeys(keys.toString().repeat(Math.abs(number))).build().perform();
+    }
 }
