@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="6">
+    <test name="herokuapp_automation">
+        <classes>
+            <class name="pom.test.herokuapp.AbtestTest">
+                <methods>
+                    <include name="testPositiveAbTest_expectedWelcomeMessages"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.AddRemoveElementsTest">
+                <methods>
+                    <include name="testPositive_AddElement_expectedDeleteButtonVisible"/>
+                    <include name="testPositive_AddThreeElements_expectedThreeDeleteButtonsVisible"/>
+                    <include name="testPositive_DeleteElement_expectedDeleteButtonNotVisible"/>
+                    <include name="testPositive_DeleteThreeElements_expectedDeleteButtonNotVisible"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.BasicAuthTest">
+                <methods>
+                    <include name="testPositiveBasicAuthTest_expectedWelcomeMessage"/>
+                    <include name="testNegativeBasicAuthTest_emptyFields_expectedAuthenticationDialogVisible"/>
+                    <include name="testNegativeBasicAuthTest_invalidUserName_expectedAuthenticationDialogVisible"/>
+                    <include name="testNegativeBasicAuthTest_invalidPassword_expectedAuthenticationDialogVisible"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.BrokenImagesTest">
+                <methods>
+                    <include name="testNegative_brokenImages_expectedTrue"/>
+                    <include name="testPositive_validImage_expectedTrue"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.CheckBoxesTest">
+                <methods>
+                    <include name="testPositive_checkBoxesAllChecked_expectedTrue"/>
+                    <include name="testPositive_checkBoxesAllUnChecked_expectedTrue"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.ContextMenuTest">
+                <methods>
+                    <include name="testPositive_alertTriggered_expectedTextTrue"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DigestAuthTest">
+                <methods>
+                    <include name="testPositiveDigestAuthTest_expectedWelcomeMessage"/>
+                    <include name="testNegativeDigestAuthTest_emptyFields_expectedAuthenticationDialogVisible"/>
+                    <include name="testNegativeDigestAuthTest_invalidUserName_expectedAuthenticationDialogVisible"/>
+                    <include name="testNegativeDigestAuthTest_invalidPassword_expectedAuthenticationDialogVisible"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DragAndDropTest">
+                <methods>
+                    <include name="testPositive_dragAndDrop_expectedReverseHeaders"/>
+                    <include name="testNegative_dragAndDrop_expectedOriginalHeaders"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DropDownListTest">
+                <methods>
+                    <include name="testPositive_selectOption_expectedEquals"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DynamicContentTest">
+                <methods>
+                    <include name="testPositive_dynamicContent_NotEqualsAfterClick"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DynamicControlsTest">
+                <methods>
+                    <include name="testPositive_checkBoxRemove_expectedAddButtonDisplayed"/>
+                    <include name="testPositive_checkBoxAdd_expectedRemoveButtonDisplayed"/>
+                    <include name="testPositive_inputEnable_expectedDisableButtonDisplayed"/>
+                    <include name="testPositive_inputDisable_expectedEnableButtonDisplayed"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.DynamicLoadingTest">
+                <methods>
+                    <include name="testPositive_DynamicLoadingExample1_expectedMessageDisplayed"/>
+                    <include name="testPositive_DynamicLoadingExample2_expectedMessageDisplayed"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.EntryAdTest">
+                <methods>
+                    <include name="testPositive_EntryAd_expectedAdNotDisplayed"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.HorizontalSliderTest">
+                <methods>
+                    <include name="testPositive_HorizontalSlide_expectedValue"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.IframeTest">
+                <methods>
+                    <include name="testPositive_IFrame_expectedMessage"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.InfinitiveScrollTest">
+                <methods>
+                    <include name="testPositive_scrollDownThreeTimes_expectedCountSix"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.InputsTest">
+                <methods>
+                    <include name="testPositive_inputsNumber_expectedEquals"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.JQueryUIMenuTest">
+                <methods>
+                    <include name="testPositive_JQueryMenuUi_expectedUrl"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.JavaScriptAlertsTest">
+                <methods>
+                    <include name="testPositive_AlertOk_expectedMessage"/>
+                    <include name="testNegative_AlertCancel_expectedMessage"/>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.JavaScriptErrorTest">
+                <methods>
+                    <include name="testNegative_JSError_expectedTrue"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.KeyPressesTest">
+                <methods>
+                    <include name="testPositive_KeyPress_expectedMessage"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.LoginTest">
+                <methods>
+                    <include name="testPositive_login_expectedLogin"/>
+                    <include name="testPositive_Logout_expectedLogout"/>
+                    <include name="testNegative_loginWrongData_expectedLoginButtonMessageUrl"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.NestedFramesTest">
+                <methods>
+                    <include name="testPositive_NestedFrames_expectedMessage"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.ShadowDomTest">
+                <methods>
+                    <include name="testPositive_ShadowDom_expectedMessage"/>
+                </methods>
+            </class>
+            <class name="pom.test.herokuapp.WindowsTest">
+                <methods>
+                    <include name="testPositive_newWindow_expectedTitleMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

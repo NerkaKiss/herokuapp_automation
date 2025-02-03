@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 screenshots
+test-output
 
 ### IntelliJ IDEA ###
 .idea
