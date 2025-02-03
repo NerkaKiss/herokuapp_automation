@@ -138,5 +138,9 @@ public class Locator {
         public static class WindowsNew {
             public static final By headingMessage = By.xpath("//h3");
         }
+
+        public static class ShadowDom {
+            public static final By paragraphShadow = By.cssSelector("p");
+        }
     }
 }

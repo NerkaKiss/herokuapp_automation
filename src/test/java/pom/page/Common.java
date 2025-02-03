@@ -326,4 +326,8 @@ public class Common {
     public static void switchToWindow(int windowNumber) {
         Driver.getDriver().switchTo().window((String) Driver.getDriver().getWindowHandles().toArray()[windowNumber]);
     }
+
+    public static String getTextFromShadow(By shadowLocator, By insideLocator) {
+        return getElement(shadowLocator).getShadowRoot().findElement(insideLocator).getText();
+    }
 }
