@@ -130,5 +130,13 @@ public class Locator {
         public static class KeyPresses {
             public static final By paragraphMessage = By.xpath("//p[@id='result']");
         }
+
+        public static class Windows {
+            public static final By divClickHere = By.xpath("//div[@class='example']/a");
+        }
+
+        public static class WindowsNew {
+            public static final By headingMessage = By.xpath("//h3");
+        }
     }
 }

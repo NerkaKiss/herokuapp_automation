@@ -322,4 +322,8 @@ public class Common {
         }
         return false;
     }
+
+    public static void switchToWindow(int windowNumber) {
+        Driver.getDriver().switchTo().window((String) Driver.getDriver().getWindowHandles().toArray()[windowNumber]);
+    }
 }
