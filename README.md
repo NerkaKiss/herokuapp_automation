@@ -2,7 +2,7 @@
 
 This project is dedicated to improving and refining test automation skills using Selenium and Java. The goal is to practice writing structured, maintainable, and effective automated tests for a variety of web elements and functionalities found on [The Internet HerokuApp](https://the-internet.herokuapp.com/). This project provides hands-on experience in UI automation, assertions, and handling authentication dialogs.
 
-This project is currently a work in progress and is continuously updated to include more test cases and improvements. The final version will provide a comprehensive test suite covering various functionalities of the HerokuApp.
+
 
 ## Technologies Used
 - **Java** (Test scripting language)
@@ -11,80 +11,167 @@ This project is currently a work in progress and is continuously updated to incl
 - **RestAssured** (Basic Authentication API testing)
 - **Page Object Model (POM)** (Test structure)
 
-## Implemented Test Cases
-### 1. A/B Test Page
-#### `AbtestTest.java`
-- **testPositiveAbTest_expectedWelcomeMessages**
-  - Verifies that the A/B test page contains expected heading and paragraph texts.
+The tests cover several features of the website, including but not limited to:
 
-### 2. Add/Remove Elements Page
-#### `AddRemoveElementsTest.java`
-- **testPositiveAddElement_expectedDeleteButtonVisible**
-  - Checks if the "Delete" button appears after adding an element.
-- **testPositiveAddThreeElements_expectedThreeDeleteButtonsVisible**
-  - Ensures that three "Delete" buttons appear after adding three elements.
-- **testPositiveDeleteElement_expectedDeleteButtonNotVisible**
-  - Confirms that deleting an element removes the "Delete" button.
-- **testPositiveDeleteThreeElements_expectedDeleteButtonNotVisible**
-  - Validates that all "Delete" buttons disappear after deleting three elements.
+## List of Test Classes
 
-### 3. Basic Authentication Page
-#### `BasicAuthTest.java`
-- **testPositiveBasicAuthTest_expectedWelcomeMessage**
-  - Tests login with valid credentials and checks for the success message.
-- **testNegativeBasicAuthTest_EmptyFields_expectedAuthenticationDialogVisible**
-  - Ensures authentication dialog appears when submitting empty credentials.
-- **testNegativeBasicAuthTest_InvalidUserName_expectedAuthenticationDialogVisible**
-  - Verifies that authentication fails with an incorrect username.
-- **testNegativeBasicAuthTest_InvalidPassword_expectedAuthenticationDialogVisible**
-  - Ensures authentication fails with an incorrect password.
+1. **AbtestTest**
+2. **AddRemoveElementsTest**
+3. **BasicAuthTest**
+4. **BrokenImagesTest**
+5. **CheckBoxesTest**
+6. **ContextMenuTest**
+7. **DigestAuthTest**
+8. **DragAndDropTest**
+9. **DropDownListTest**
+10. **DynamicContentTest**
+11. **DynamicControlsTest**
+12. **DynamicLoadingTest**
+13. **EntryAdTest**
+14. **HorizontalSliderTest**
+15. **IframeTest**
+16. **InfinitiveScrollTest**
+17. **InputsTest**
+18. **JavaScriptAlertsTest**
+19. **JavaScriptErrorTest**
+20. **JQueryUIMenuTest**
+21. **KeyPressesTest**
+22. **LoginTest**
+23. **NestedFramesTest**
+24. **ShadowDomTest**
+25. **WindowsTest**
 
-### 4. Broken Images Page
-#### `BrokenImagesTest.java`
-- **testNegative_BrokenImages_expectedTrue**
-  - Verifies that the first and second images are broken.
-- **testPositive_ValidImage_expectedTrue**
-  - Ensures that the third image is valid.
+## Test Class Details
 
-### 5. Checkboxes Page
-#### `CheckBoxesTest.java`
-- **testPositive_CheckBoxesAllChecked_expectedTrue**
-  - Verifies that both checkboxes are checked when selected.
-- **testPositive_CheckBoxesAllUnChecked_expectedTrue**
-  - Ensures that both checkboxes are unchecked when deselected.
+### 1. AbtestTest
+- **Test**: `testPositiveAbTest_expectedWelcomeMessages`
+  - Verifies the presence of expected heading and paragraph text on the A/B Test page.
 
-### 6. Context Menu Page
-#### `ContextMenuTest.java`
-- **testPositive_AlertTriggered_expectedTextTrue**
-  - Checks that right-clicking on the box triggers the expected JavaScript alert.
+### 2. AddRemoveElementsTest
+- **Tests**:
+  - `testPositive_AddElement_expectedDeleteButtonVisible`
+  - `testPositive_AddThreeElements_expectedThreeDeleteButtonsVisible`
+  - `testPositive_DeleteElement_expectedDeleteButtonNotVisible`
+  - `testPositive_DeleteThreeElements_expectedDeleteButtonNotVisible`
+  - Tests the functionality of adding and removing elements, ensuring the correct visibility of delete buttons.
 
-### 7. Digest Authentication Page
-#### `DigestAuthTest.java`
-- **testPositiveDigestAuthTest_expectedWelcomeMessage**
-  - Ensures successful login using digest authentication.
-- **testNegativeDigestAuthTest_EmptyFields_expectedAuthenticationDialogVisible**
-  - Verifies authentication dialog appears when credentials are empty.
-- **testNegativeDigestAuthTest_InvalidUserName_expectedAuthenticationDialogVisible**
-  - Ensures authentication fails with an incorrect username.
-- **testNegativeDigestAuthTest_InvalidPassword_expectedAuthenticationDialogVisible**
-  - Ensures authentication fails with an incorrect password.
+### 3. BasicAuthTest
+- **Tests**:
+  - `testPositiveBasicAuthTest_expectedWelcomeMessage`
+  - `testNegativeBasicAuthTest_emptyFields_expectedAuthenticationDialogVisible`
+  - `testNegativeBasicAuthTest_invalidUserName_expectedAuthenticationDialogVisible`
+  - `testNegativeBasicAuthTest_invalidPassword_expectedAuthenticationDialogVisible`
+  - Tests basic authentication with valid and invalid credentials.
 
-### 8. Drag and Drop Page
-#### `DragAndDropTest.java`
-- **testPositive_dragAndDrop_expectedReverseHeaders**
-  - Ensures that after dragging column A onto column B, their headers are swapped.
-- **testNegative_dragAndDrop_expectedOriginalHeaders**
-  - Verifies that dragging column A to an empty space does not change headers.
+### 4. BrokenImagesTest
+- **Tests**:
+  - `testNegative_brokenImages_expectedTrue`
+  - `testPositive_validImage_expectedTrue`
+  - Verifies the detection of broken images and the validity of intact images.
 
-### 9. Drop Down List Page
-#### `DropDownListTest.java`
-- **testPositive_selectOption_expectedEquals**
-  - Ensures correct option is selected based on the provided data set.
+### 5. CheckBoxesTest
+- **Tests**:
+  - `testPositive_checkBoxesAllChecked_expectedTrue`
+  - `testPositive_checkBoxesAllUnChecked_expectedTrue`
+  - Tests the functionality of checking and unchecking checkboxes.
 
-### 10. Dynamic Content Page
-#### `DynamicContentTest.java`
-- **testPositive_DynamicContent_NotEqualsAfterClick**
-  - Checks that content changes after clicking the refresh link.
+### 6. ContextMenuTest
+- **Test**: `testPositive_alertTriggered_expectedTextTrue`
+  - Verifies the triggering of a context menu alert and the expected alert text.
+
+### 7. DigestAuthTest
+- **Tests**:
+  - `testPositiveDigestAuthTest_expectedWelcomeMessage`
+  - `testNegativeDigestAuthTest_emptyFields_expectedAuthenticationDialogVisible`
+  - `testNegativeDigestAuthTest_invalidUserName_expectedAuthenticationDialogVisible`
+  - `testNegativeDigestAuthTest_invalidPassword_expectedAuthenticationDialogVisible`
+  - Tests digest authentication with valid and invalid credentials.
+
+### 8. DragAndDropTest
+- **Tests**:
+  - `testPositive_dragAndDrop_expectedReverseHeaders`
+  - `testNegative_dragAndDrop_expectedOriginalHeaders`
+  - Tests drag-and-drop functionality and verifies the resulting header positions.
+
+### 9. DropDownListTest
+- **Test**: `testPositive_selectOption_expectedEquals`
+  - Verifies the selection of options from a dropdown list.
+
+### 10. DynamicContentTest
+- **Test**: `testPositive_dynamicContent_NotEqualsAfterClick`
+  - Tests the dynamic loading of content and ensures content changes after interaction.
+
+### 11. DynamicControlsTest
+- **Tests**:
+  - `testPositive_checkBoxRemove_expectedAddButtonDisplayed`
+  - `testPositive_checkBoxAdd_expectedRemoveButtonDisplayed`
+  - `testPositive_inputEnable_expectedDisableButtonDisplayed`
+  - `testPositive_inputDisable_expectedEnableButtonDisplayed`
+  - Tests the dynamic enabling and disabling of controls and checkboxes.
+
+### 12. DynamicLoadingTest
+- **Tests**:
+  - `testPositive_DynamicLoadingExample1_expectedMessageDisplayed`
+  - `testPositive_DynamicLoadingExample2_expectedMessageDisplayed`
+  - Verifies the display of messages after dynamic loading.
+
+### 13. EntryAdTest
+- **Test**: `testPositive_EntryAd_expectedAdNotDisplayed`
+  - Tests the closing of an entry ad and verifies its visibility.
+
+### 14. HorizontalSliderTest
+- **Test**: `testPositive_HorizontalSlide_expectedValue`
+  - Tests the functionality of a horizontal slider and verifies the selected value.
+
+### 15. IframeTest
+- **Test**: `testPositive_IFrame_expectedMessage`
+  - Verifies the message displayed within an iframe.
+
+### 16. InfinitiveScrollTest
+- **Test**: `testPositive_scrollDownThreeTimes_expectedCountSix`
+  - Tests infinite scrolling and verifies the count of loaded paragraphs.
+  - IMPORTANT!!! TEST FAILS WITH HEADLESS MODE
+
+### 17. InputsTest
+- **Test**: `testPositive_inputsNumber_expectedEquals`
+  - Tests the input of numbers and verifies the displayed value.
+
+### 18. JavaScriptAlertsTest
+- **Tests**:
+  - `testPositive_AlertOk_expectedMessage`
+  - `testNegative_AlertCancel_expectedMessage`
+  - Tests JavaScript alerts and confirms the expected messages.
+
+### 19. JavaScriptErrorTest
+- **Test**: `testNegative_JSError_expectedTrue`
+  - Verifies the presence of JavaScript errors on the page.
+
+### 20. JQueryUIMenuTest
+- **Test**: `testPositive_JQueryMenuUi_expectedUrl`
+  - Tests navigation within a jQuery UI menu and verifies the URL.
+
+### 21. KeyPressesTest
+- **Test**: `testPositive_KeyPress_expectedMessage`
+  - Tests key press events and verifies the resulting messages.
+
+### 22. LoginTest
+- **Tests**:
+  - `testPositive_login_expectedLogin`
+  - `testPositive_Logout_expectedLogout`
+  - `testNegative_loginWrongData_expectedLoginButtonMessageUrl`
+  - Tests login and logout functionality with valid and invalid credentials.
+
+### 23. NestedFramesTest
+- **Test**: `testPositive_NestedFrames_expectedMessage`
+  - Verifies the messages displayed within nested frames.
+
+### 24. ShadowDomTest
+- **Test**: `testPositive_ShadowDom_expectedMessage`
+  - Tests the retrieval of messages from shadow DOM elements.
+
+### 25. WindowsTest
+- **Test**: `testPositive_newWindow_expectedTitleMessage`
+  - Tests the opening of a new window and verifies the title and message.
 
 ## Why This Project?
 Practicing test automation on HerokuApp is valuable because it offers real-world testing scenarios, including dynamic elements, authentication handling, and UI validation. This project helps develop structured test writing, improves debugging skills, and strengthens understanding of automated UI testing principles.
